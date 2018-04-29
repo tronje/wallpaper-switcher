@@ -5,11 +5,12 @@ import os
 import subprocess
 
 
-WPDIR = "/tmp/wallpaper-switcher/"
+USER = subprocess.check_output(["whoami"]).decode().strip()
+WPDIR = f"/tmp/{USER}/wallpaper-switcher/"
 WPFILE = WPDIR + "current_wallpaper"
 LOGFILE = WPDIR + "log"
 
-WP_PREFIX = "/home/tronje/pics/wallpapers/solar_system/"
+WP_PREFIX = f"/home/{USER}/pics/wallpapers/solar_system/"
 
 WALLPAPERS = [
     WP_PREFIX + "earth.png",
